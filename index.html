@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="shared.css">
+    <link rel="stylesheet" href="settings.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    
+</head>
+<body>
+
+    <!-- Glow effect elements -->
+    <div id="blob" class="blob"></div>
+    <div id="blur" class="blur"></div>
+    
+
+    <label class="switch">
+        <input type="checkbox" id="theme-toggle">
+        <span class="slider round"></span>
+    </label>
+
+
+      
+    <div class="navigation">
+        <i class='bx bx-x bx-tada close-icon' onclick="hideSidebar()"></i>
+        <ul>
+            <li class="list active">
+                <a href="#home">
+                    <span class="icon">
+                        <ion-icon name="home-outline"></ion-icon>
+                        <p>Home</p>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#projects">
+                    <span class="icon">
+                        <ion-icon name="rocket-outline"></ion-icon>
+                        <p>Projects</p>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#about">
+                    <span class="icon">
+                        <ion-icon name="person-outline"></ion-icon>
+                        <p>About</p>
+                    </span>
+                </a>
+            </li>
+            <li class="list">
+                <a href="#contact">
+                    <span class="icon">
+                        <ion-icon name="call-outline"></ion-icon>
+                        <p>Contact
+
+
+                        </p>
+                    </span>
+                </a>
+            </li>
+            <div class="indicator"></div>
+        </ul>
+    </div>
+
+    <div class="menu-container">
+        <div class="menu-icon">
+            <i onclick="showSidebar()" class='bx bx-menu-alt-left'></i>
+        </div>
+        <div class="heading">
+           <h1>Portfolio</h1>
+        </div>
+    </div>
+    
+    <main class="main" id="main">
+       
+     <div class="card">
+ 
+ 
+        <section class="home" id="home">
+            <div class="home-content">
+                <h1>Hi There, Name Here<span>.</span></h1>
+                <h3 class="multiText"></h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis, distinctio accusantium! Sed qui blanditiis, hic, perferendis magnam recusandae placeat repudiandae labore numquam voluptas delectus perspiciatis dolorum ipsa sit cum obcaecati!</p> 
+                <div class="btn-group">
+                    <a href="#" class="btn active">Resume</a>
+                </div> 
+            </div>
+        
+          
+        </section>
+        
+        <section class="projects" id="projects">
+            <div class="app">
+                <div class="bento">
+                    <h2><span>P</span>rojects</h2>
+                    <div class="bento_container">
+                        <div class="bento_box box_a">
+                            <a href="D:\Neelu\Projects\Portfolio\project4.html"><img src="D:\Neelu\Projects\Portfolio\bento1.jpg" alt="Project 1"></a>
+                        </div>
+                        <div class="bento_box box_b">
+                            <a href="D:\Neelu\Projects\Portfolio\project4.html"><img src="D:\Neelu\Projects\Portfolio\bento2.jpg" alt="Project 2"></a>
+                        </div>
+                        <div class="bento_box box_c">
+                            <a href="D:\Neelu\Projects\Portfolio\project4.html"><img src="D:\Neelu\Projects\Portfolio\bento3.jpg" alt="Project 3"></a>
+                        </div>
+                        <div class="bento_box box_d">
+                            <a href="D:\Neelu\Projects\Portfolio\project4.html"><img src="D:\Neelu\Projects\Portfolio\bento4.jpg" alt="Project 4"></a>
+                        </div>
+                    </div>
+                    <div class="know-more-container">
+                        <a href="D:\Neelu\Projects\Portfolio\project4.html" class="know-more-button">Know More...</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="about" id="about">
+            <div class="about-text">
+                <h2>About<span>Me</span></h2>
+                <h4>3D ARTIST</h4>
+                <div class="about-content">
+                    <div class="about-para">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Temporibus, fugiat! Alias distinctio sunt reprehenderit tempora, ipsum incidunt tempore iure eum nam quos saepe assumenda mollitia cupiditate deleniti debitis ea dolor! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate, veritatis voluptatibus. Nam placeat sunt omnis, explicabo adipisci odit dignissimos repellendus assumenda. Facere facilis mollitia at eius, atque debitis soluta pariatur. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deleniti porro voluptatum suscipit accusamus quibusdam voluptatem esse quisquam dignissimos, sed atque quas veritatis, numquam provident! Recusandae ut dolore aspernatur saepe quod!</p>
+                    </div>
+                    <div class="about-img">
+                        <img src="D:\Portfolio\Luffy.jpg" alt="About Image">
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+
+        <section class="contact" id="contact">
+            <div class="contact-container">
+                <div class="contact-text">
+                    <h2>Contact<span>Me</span></h2>
+                    <h4>Let's work together</h4>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab sed neque ut autem consequuntur ex, quod similique ipsum excepturi? Accusamus praesentium mollitia alias cum molestias impedit nihil sapiente suscipit iste.</p>
+                    <div class="contact-list">
+                        <ul>
+                            <li><i class='bx bxs-send'></i>examplemail@gmail.com</li>
+                            <li><i class='bx bxs-phone-call'></i>Mobile No.</li>
+                        </ul>
+                    </div>
+                    <div class="contact-icons">
+                        <a href=""><i class='bx bxl-facebook'></i></a>
+                        <a href=""><i class='bx bxl-linkedin'></i></a>
+                        <a href=""><i class='bx bxl-instagram'></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <form name="submit-to-google-sheet" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="d0f51de6-9c9d-4e21-89d2-a36bbe891f9d">
+                        <input type="text" name="name" id="name" placeholder="Enter Name" required>
+                        <input type="email" name="email" id="email" placeholder="Enter Email" required>
+                        <input type="text" name="subject" id="subject" placeholder="Enter Subject">
+                        <textarea name="message" id="message" cols="40" rows="10" placeholder="Enter Message" required></textarea>
+                        <input type="submit" value="submit" class="send">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <div class="holder">
+                <div class="footer-row">
+                    <div class="footer-col" id="brand">
+                        <img src="images/logo.png" alt="GLYPH" class="brand-icon">
+                        <p>We are specialized in designings, make your business a brand. Try our premium services.</p>
+                    </div>
+                    <div class="footer-col" id="blog">
+                        <h4>Blog</h4>
+                        <a href="#">Latest Posts</a>
+                        <a href="#">Popular Articles</a>
+                        <a href="#">Trending Topics</a>
+                        <a href="#">Archive</a>
+                    </div>
+                    <div class="footer-col" id="links">
+                        <h4>Quick Links</h4>
+                        <a href="#">Home</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">About</a>
+                        <a href="#">Contact</a>
+                    </div>
+                  
+                    <div class="footer-col social-media">
+                        <h4>Follow Me </h4>
+                        <a href="#"><i class='bx bxl-facebook' ></i></a>
+                        <a href="#"><i class='bx bxl-instagram' ></i></a>
+                        <a href="#"> <i class='bx bxl-linkedin' ></i></a>
+                        <a href="#"><i class='bx bxl-twitter' ></i></a>
+                    </div>
+                </div>
+                <div class="footer-row legal">
+                    <p>&copy; 2024 Your Brand. All rights reserved.</p>
+                    <div class="legal-links">
+                        <a href="#">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+
+           
+         </footer>
+
+         
+   
+        <!--Glow effect-->
+
+    </main>
+    <script src="index.js"></script>
+
+    
+    <script>
+        function showSidebar() {
+            const navigation = document.querySelector('.navigation');
+            navigation.style.display = 'flex';
+
+            // Add event listener to close the sidebar when clicking outside
+            document.addEventListener('click', handleClickOutside, true);
+        }
+
+        function hideSidebar() {
+            const navigation = document.querySelector('.navigation');
+            navigation.style.display = 'none';
+
+            // Remove event listener
+            document.removeEventListener('click', handleClickOutside, true);
+        }
+
+        function handleClickOutside(event) {
+            const navigation = document.querySelector('.navigation');
+            const menuIcon = document.querySelector('.menu-icon');
+
+            if (!navigation.contains(event.target) && !menuIcon.contains(event.target)) {
+                hideSidebar();
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+        var typingEffect = new Typed(".multiText", {
+            strings: ["3D DESIGNER", "3D ARTIST", "3D MODELER"],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 70,
+            backDelay: 1000,
+            showCursor: false,
+        });
+    </script>
+
+<script>
+    /* -- Glow effect -- */
+    const blob = document.getElementById("blob");
+
+    window.onpointermove = event => { 
+        const { clientX, clientY } = event;
+        
+        blob.animate({
+            left: `${clientX}px`,
+            top: `${clientY}px`
+        }, { duration: 3000, fill: "forwards" });
+    }
+</script> 
+
+
+
+
+   
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+    <script>
+        const list = document.querySelectorAll('.list');
+        function activeLink() {
+            list.forEach((item) => item.classList.remove('active'));
+            this.classList.add('active'); // Corrected typo here
+        }
+        list.forEach((item) => item.addEventListener('click', activeLink));
+    </script>
+    
+
+    <script>
+        const sections = document.querySelectorAll('section');
+        const options = {
+            root: null,
+            threshold: 0.6, // Adjust this value based on when you want the intersection to trigger
+        };
+    
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const id = entry.target.getAttribute('id');
+                    document.querySelector('.navigation .active').classList.remove('active');
+                    document.querySelector(`.navigation a[href="#${id}"]`).parentElement.classList.add('active');
+                }
+            });
+        }, options);
+    
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+    
+
+
+
+
+   
+</body>
+</html>
