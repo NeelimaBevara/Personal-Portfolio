@@ -1,0 +1,1207 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+
+body{
+    background: #030b10;
+    color: #ededed;
+    overflow-x: hidden;
+    font-family: 'Roboto';
+    margin: 0;
+
+    }
+  
+  
+
+    /* Styling for the toggle switch */
+   
+
+    @keyframes rotate {
+        from {
+            rotate: 0deg;
+        }
+        50% {
+            scale: 1 1.5;
+        }
+        to {
+            rotate: 360deg;
+        }
+    }
+    .blob {
+        height: 18vmax;
+        aspect-ratio: 1;
+        position: fixed; /* Changed to fixed */
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 50%;
+        background: linear-gradient(to right, aquamarine, mediumpurple);
+        animation: rotate 20s infinite;
+        opacity: 0.8;
+        z-index: -1;
+    }
+    .blur {
+        height: 100vh;
+        width: 100%;
+        position: fixed; /* Changed to fixed */
+        z-index: -1;
+        backdrop-filter: blur(10vmax);
+    }
+    .main {
+    transform: translateX(-20px); /* Adjust the value as needed */
+    position: relative;
+}
+
+.menu-container{
+    display: none;
+}
+
+    /* Ensure the navigation container retains the intended design */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around; /* Distribute space between the items */
+    align-items: center;
+    width: 52.5px;
+    height: 250px;
+    background-color: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.4); /* Border with slight transparency */
+    border-radius: 50px;
+    backdrop-filter: blur(8px); /* Blur effect */
+    position: fixed; /* Make the navigation fixed */
+    top: 50%; /* Center the navigation vertically */
+    left: 20px; /* Position it on the left side, adjust as needed */
+    transform: translateY(-50%); /* Center the navigation vertically using transform */
+    padding: 10px 0;
+    padding-bottom: 4px; /* Add padding to the top and bottom */
+    z-index: 3; /* Ensure the navigation is above the blur */
+}
+
+.navigation ul {
+    display: flex;
+    flex-direction: column; /* Arrange list items in a column */
+    align-items: center; /* Center the list items horizontally */
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.navigation ul li {
+    list-style: none;
+    height: 70px; /* Keep height consistent */
+    width: 70px;
+    display: flex;
+    justify-content: center; /* Center the anchor within the list item */
+    align-items: center; /* Center the anchor within the list item */
+    z-index: 1;
+}
+
+.navigation ul li a {
+    display: flex;
+    justify-content: center; /* Center the icon within the anchor */
+    align-items: center; /* Center the icon within the anchor */
+    width: 100%;
+    height: 100%; /* Ensure the anchor takes the full size of the list item */
+    text-align: center;
+    font-weight: 500;
+}
+
+.navigation ul li a .icon {
+    font-size: 1.5rem;
+    color: rgb(215, 213, 213);
+    transition: 0.5s;
+    margin-top: -30px;
+}
+
+
+
+.navigation ul li.active a .icon {
+    color: rgb(67, 66, 66);
+}
+
+
+.navigation ul li a .icon p {
+    display: none;
+}
+
+/* Updated .indicator styles */
+.indicator {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #d2d5d3;
+    border-radius: 50%;
+    border: 2px solid rgb(67, 66, 66);
+    transition: 0.5s;
+    top: 0px; /* Adjust top position to match the padding */
+    transform: translateY(10px); /* Ensure initial position centers the indicator */
+    z-index: 0; /* Ensure it is below the icons */
+}
+
+.navigation ul li:nth-child(1).active ~ .indicator {
+    transform: translateY(calc(70px * 0 )); /* Adjust calculation for exact centering */
+}
+
+.navigation ul li:nth-child(2).active ~ .indicator {
+    transform: translateY(calc(70px * 1 )); /* Adjust calculation for exact centering */
+}
+
+.navigation ul li:nth-child(3).active ~ .indicator {
+    transform: translateY(calc(70px * 2 )); /* Adjust calculation for exact centering */
+}
+
+.navigation ul li:nth-child(4).active ~ .indicator {
+    transform: translateY(calc(70px * 3 )); /* Adjust calculation for exact centering */
+}
+
+.home-content h1::before,
+.home-content h3::before,
+.home-content p::before,
+.home-content .btn-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #030b10;
+    animation: showRight 1s ease forwards;
+    visibility: hidden;
+}
+
+@keyframes showRight {
+    0% {
+        width: 100%;
+        visibility: visible;
+    }
+    100% {
+        width: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.home {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10%; /* Adjust the left padding to align with other sections */
+    padding-right: 15%;
+}
+
+.home-content {
+    max-width: 800px;
+    margin: 20px 0 40px;
+    z-index: 3;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.home-content h1 {
+    position: relative;
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 25px; /* Adjust this value to control the space */
+}
+
+.home-content h3 {
+    position: relative;
+    font-size: 32px;
+    font-weight: 700;
+    color: #00abf0;
+    height: 10px; /* Fixed height for the multitext element */
+    display: flex;
+    align-items: center;
+}
+
+.home-content p {
+    position: relative;
+    font-size: 16px;
+    margin: 20px 0 20px;
+    width: 65%;
+    text-align: justify;
+}
+
+.btn-group {
+    margin: 0; /* Remove existing margin */
+    margin-top: 15px; /* Add margin-top to create space below the paragraph */
+    display: flex;
+    justify-content: flex-start; /* Align buttons to the left */
+    opacity: 0; /* Start hidden */
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1.5s; /* Delay to start after paragraph animation */
+}
+
+.btn-group .btn {
+    border-color: #d5d5d5;
+    color: #fff;
+    background-color: #333;
+    padding: 12px 25px;
+    margin: 5px 10px 5px 0; /* Adjust margins */
+    text-decoration: none;
+    border-radius: 50px;
+    border: 2px solid #e5e5e5;
+    box-shadow: 0 10px 10px -8px rgb(0 0 0 / 78%);
+}
+
+.btn.active {
+    border-color: #00abf0;
+}
+
+.home-content .btn-box {
+    position: relative;
+    width: 150px;
+    height: 35px;
+    display: flex;
+}
+
+.typed-cursor {
+    display: inline-block;
+    margin-left: 100px; /* Adjust the margin as needed */
+}
+
+
+.home-sci {
+    position: absolute;
+    bottom: 40px;
+    width: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-sci::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: #030b10;
+    animation: showRight 1s ease forwards;
+    animation-delay: 2.5s;
+    z-index: 2;
+ }
+
+.home-sci a{
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    transition: .5s;
+
+}
+
+.home-sci a:hover{
+    color: #081b29;
+}
+
+.home-sci a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background: #00abf0;
+    z-index: -1;
+    transition: .5s;
+
+}
+
+.home-sci a:hover::before{
+    width: 100%;
+}
+
+.home-content h1 span{
+    color: #00abf0;
+}
+
+
+.bento {
+    height: auto;
+    position: relative;
+    width: 1000px; /* Occupies 70% of the width */
+    overflow: hidden;
+    margin: 0 auto; /* Center align */
+    padding-left: 14.3%;
+    padding-right: 15%;
+    margin-left:70px;
+    
+}
+
+.bento_container{
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* Two columns for two boxes in each row */
+    grid-template-rows: repeat(10, 1fr); /* Two rows */
+    gap: 5.5rem;
+    width: 100%; /* Full width of the bento */
+    height: inherit;
+    z-index: 10;  
+    
+}
+
+.bento h2{
+    font-size: 60px;
+}
+
+.bento h2 span{
+    color: #00abf0;
+}
+
+.bento_box {
+    position: absolute;
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    border-radius: 15px; /* Adjust the border-radius as needed to make the edges rounded */
+    background-color: rgba(48, 48, 48, 0.5);
+    transition: background-color 0.32s ease-in-out;
+    display: flex;
+    align-items: flex-end;
+    padding: 3rem;
+    cursor: pointer;
+    width: 100%; /* Set width to fill the container */
+    height: 100%; /* Set height to fill the container */
+    background-size: cover; /* Ensure the background image covers the entire box */
+    background-position: center; /* Center the background image */
+    
+}
+
+
+.bento_box.active {
+    background-color: rgba(48, 48, 48, 0.3);
+    transition: background-color 0.32s ease-in-out;
+}
+
+.bento_box:nth-child(1) {
+    grid-area: 1/1/6/6;
+    width: 120%;
+    height: 120%;
+    border-radius: 15px; /* Adjust the border-radius as needed */
+    overflow: hidden; 
+ /* First box, starting from row 1, column 1 to row 2, column 2 */
+}
+
+.bento_box:nth-child(2) {
+    grid-area:1/7/4/10; 
+    width: 80%;
+    height: 90%;
+    border-radius: 15px; /* Adjust the border-radius as needed */
+    overflow: hidden; 
+    
+    /* Second box, starting from row 1, column 2 to row 2, column 3 */
+}
+
+.bento_box:nth-child(3) {
+    grid-area: 7/1/10/6; 
+    width: 120%;
+    height: 90%;
+    border-radius: 15px; /* Adjust the border-radius as needed */
+    overflow: hidden; 
+    /* Third box, starting from row 2, column 1 to row 3, column 2 */
+}
+
+.bento_box:nth-child(4) {
+    width: 80%;
+    height: 96%;
+    grid-area: 4/7/10/10; /* Fourth box, starting from row 2, column 2 to row 3, column 3 */
+    border-radius: 15px; /* Adjust the border-radius as needed */
+    overflow: hidden; 
+}
+
+.bento_box_text {
+    overflow: hidden;
+}
+
+.bento_box_text span {
+    font-size: 2.4rem;
+}
+
+
+
+    .bento_box img {
+         /* Center the image within the box */
+        width: 100%;
+      height: 100%;
+      object-fit: cover;
+      position: absolute;
+      top: 0;
+      left: 0;
+
+    }
+
+
+    .know-more-container {
+        text-align: center;
+        margin-top: 20px;
+        margin-left:700px ;
+    }
+    
+    .know-more-button {
+        display: inline-block;
+        padding: 10px 20px;
+        font-size: 18px;
+        color: white;
+        background-color: #2e87e6;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .know-more-button:hover {
+        background-color: #1a5fa8;
+        transform: scale(1.05);
+    }
+    
+    .know-more-button:active {
+        background-color: #0f4374;
+    }
+    
+/* About section styling */
+/* About section styling */
+.about {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 19%;
+    box-sizing: border-box;
+    gap: 2rem;
+}
+
+/* About text styling */
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-text h2 {
+    font-size: 60px;
+}
+
+.about-text h2 span {
+    color: #00abf0;
+}
+
+.about-text h4 {
+    font-size: 29px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+/* About content styling to place paragraph and image in a single row */
+.about-content {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    gap: 2rem; /* Space between paragraph and image */
+}
+
+/* About paragraph styling */
+.about-para {
+    flex: 2; /* Allow paragraph to take more space */
+}
+
+.about-para p {
+    color: #fff;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    text-align: justify;
+}
+
+/* About image styling */
+.about-img {
+    flex: 1; /* Allow image to take available space */
+    max-width: 300px; /* Ensure image doesn't exceed 300px in width */
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+   
+/* Contact section styling */
+/* Contact section styling */
+.contact {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+    padding: 0 18%; /* Apply padding to the contact section */
+    box-sizing: border-box;
+}
+
+/* Contact container styling */
+.contact-container {
+    display: flex;
+    width: 100%; /* Ensure the container spans the entire width */
+    align-items: flex-start; /* Align items at the start */
+    gap: 2rem; /* Space between text and form */
+}
+
+/* Contact text styling */
+.contact-text {
+    width: 50%; /* Set width for the text container */
+}
+
+.contact-text h2 {
+    font-size: 60px;
+}
+
+.contact-text h2 span {
+    color: #00abf0;
+}
+
+.contact-text h4 {
+    font-size: 29px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.7;
+    margin: 15px 0 30px;
+}
+
+.contact-text p {
+    color: aliceblue;
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    text-align: justify;
+}
+
+.contact-list,
+.contact-icons {
+    padding-left: 0;
+    margin-top: 0; /* Remove default padding */
+}
+
+.contact-list ul {
+    list-style: none; /* Remove default list styles */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+
+.contact-list li {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.contact-list i {
+    display: inline-block;
+    color: #00abf0;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all .40s ease;
+    margin-right: 10px;
+}
+
+.contact-icons i {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #00abf0;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #00abf0;
+    text-decoration: none;
+    margin: 10px 15px 30px 0;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideleft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.contact-icons i:hover {
+    background: #00abf0;
+    color: #000;
+    box-shadow: 0 0 20px #00abf0;
+}
+
+/* Contact form styling */
+.contact-form {
+    margin-top: 20%;
+    width: 50%; /* Set width for the form container */
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    border: none;
+    outline: none;
+    width: 90%;
+    padding: 13px;
+    background: #555557;
+    color: #000;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    border-radius: 0.5rem;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contact-form input[type="text"]::placeholder,
+.contact-form input[type="email"]::placeholder,
+.contact-form textarea::placeholder {
+    color: #000; /* Adjust placeholder color as needed */
+    font-family: inherit; /* Inherit font family from parent element */
+    font-size: 1rem; /* Set font size as needed */
+    font-weight: 600; /* Set font weight as needed */
+}
+
+.contact-form form .send {
+    display: inline-block;
+    padding: 10px 30px; /* Adjust padding to reduce the size */
+    background: #00abf0;
+    border-radius: 30px; /* Reduce the border-radius for a smaller button */
+    font-size: 16px; /* Reduce the font size */
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #00abf0, 0 0 25px #00abf0;
+}
+
+.contact-form form .send:hover {
+    box-shadow: 0 0 5px #00abf0, 0 0 10px #00abf0, 0 0 15px #00abf0; /* Reduce the size and intensity of the box-shadow */
+}
+
+
+@keyframes slideTop {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@media (min-width: 1024px) {
+    .close-icon {
+        display: none !important; 
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .bento_container {
+        grid-template-rows: repeat(2, 1fr); /* Change to 2 rows */
+        grid-template-columns: repeat(2, 1fr); /* Change to 2 columns */
+    }
+
+    .bento_box:nth-child(1) {
+        width:1344px;
+        height:1300px;
+        grid-area: 1/1/5/5; /* Place first box in the first row, first column */
+    }
+    .bento_box:nth-child(2) {
+        grid-area: 1/6/3/8; /* Place second box in the first row, second column */
+    }
+    .bento_box:nth-child(3) {
+        grid-area: 6/1/8/5; /* Place third box in the second row, first column */
+    }
+    .bento_box:nth-child(4) {
+        grid-area: 4/6/8/8; /* Place fourth box in the second row, second column */
+    }
+
+   
+    .bento_intro h1 .char {
+        font-size: 32rem; /* Increase font size */
+    }
+}
+
+@keyframes showRight{
+    100%{
+        width:0;
+    }
+}
+
+.holder {
+    width: auto;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #555557;
+    align-items: center;
+    margin-right: -20px;
+
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 1em;
+}
+
+.footer-col {
+    flex: 1 1 200px;
+    margin: 1em 0;  /* Reduced margin for a more compact layout */
+}
+
+.footer-col h4 {
+    margin-bottom: 0.5em;
+}
+
+.footer-col a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin: 0.2em 0;
+}
+
+.footer-col a:hover {
+    text-decoration: underline;
+}
+
+.footer-col p {
+    text-align: justify;  /* Justify the paragraph text */
+    margin: 0.5rem 0;
+    margin-right: 2em;
+}
+
+.footer-col img.brand-icon {
+    width: 80px;  /* Adjusted size for a more compact icon */
+    height: auto;
+    margin-bottom: 0.5em;
+    margin-top: 1em;
+}
+
+.footer-col.social-media a {
+    display: inline-block;
+    margin: 0 0.5em;
+    font-size: 1.2em;
+}
+
+.footer-row.legal {
+    display: flex;
+    justify-content: center; /* Aligns items in the center horizontally */
+    align-items: center; /* Aligns items in the center vertically */
+    flex-wrap: wrap; /* Ensures elements wrap on small screens */
+    padding-top: 1rem;
+    gap: 1rem; /* Adds space between items */
+    background-color: #444;
+    width: 100%;
+}
+
+.footer-row.legal p,
+.footer-row.legal .legal-links {
+    color: #f2f2f2;
+    font-family: poppins, sans-serif;
+    font-size: 0.9rem;
+    margin: 0; /* Ensure no additional margin */
+    text-align: center;
+}
+
+.footer-row.legal .legal-links {
+    display: flex;
+    gap: 1rem; /* Space between the links */
+}
+
+.footer-row.legal .legal-links a {
+    text-decoration: none;
+    color: #f2f2f2;
+    transition: color 0.3s ease;
+}
+
+.footer-row.legal .legal-links a:hover {
+    color: #ff014fff;
+}
+
+
+
+
+
+@media screen and (max-width: 668px) {
+    body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden; /* Prevent horizontal scrolling */
+    }
+    
+    section {
+        padding: 2rem 0;
+        overflow: hidden; /* Ensure content doesn't overflow the sections */
+        min-height: 100vh; /* Ensure each section takes at least the full viewport height */
+        box-sizing: border-box;
+    }
+    
+   
+
+    .blob {
+        height: 30vmax; 
+        visibility: hidden; /* Hide blob */
+    }
+
+    .blur {
+        backdrop-filter: blur(5vmax);
+        visibility: hidden; /* Hide blur */
+    }
+
+    .main {
+        transform: translateX(-10px); /* Adjust transform for smaller screens */
+    }
+
+    .home {
+        padding: 0 10%; /* Adjust padding */
+    }
+
+    .home-content h1 {
+        font-size: 32px; /* Reduce font size */
+        margin-bottom: 20px; /* Adjust margin */
+    }
+
+    .home-content h3 {
+        font-size: 24px; /* Reduce font size */
+    }
+
+    .home-content p {
+        font-size: 14px; /* Reduce font size */
+        width: 100%; /* Full width */
+    }
+
+    .btn-group .btn {
+        padding: 10px 20px; /* Adjust button padding */
+        font-size: 14px; /* Reduce font size */
+    }
+
+    .menu-container {
+        position: fixed; /* Fixed position to keep it on top */
+        top: 10px; /* Position it 10px from the top */
+        left: 20px; /* Position it 20px from the left */
+        z-index: 1000; /* Ensure it stays on top of other elements */
+        display: flex; /* Use flexbox to align icon and text horizontally */
+        align-items: center; /* Center items vertically */
+        z-index: 500;
+    }
+
+    .menu-container.blurred {
+        filter: blur(5px); /* Adjust blur amount as needed */
+        opacity: 0.5; /* Adjust opacity as needed */
+    }
+    
+    .menu-icon {
+        font-size: 32px; /* Adjust the size of the icon */
+        color: rgb(215, 213, 213); /* Icon color */
+        margin-right: 10px; /* Add space between the icon and text */
+        cursor: pointer;
+        transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    }
+    
+    .heading h1 {
+        margin: 0; /* Remove default margin */
+        font-size: 18px; /* Adjust the size of the text */
+        color: rgb(215, 213, 213); /* Text color */
+        transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition */
+    }
+    
+    .navigation {
+        display: none;
+        flex-direction: column; /* Change flex direction to row */
+        width: 50%; /* Full width */
+        height: 100%; /* Adjust height */
+        top: 0; /* Remove top positioning */
+        left: 0; /* Align to the left */
+        bottom: 0; /* Position at the bottom */
+        transform: none; /* Remove vertical centering */
+        justify-content: space-around; /* Distribute space between items */
+        padding: 0; /* Remove padding */
+        margin: 0;
+        border-radius: 0;
+        z-index: 1000;
+    }
+    
+    .navigation ul {
+        flex-direction: column; /* Arrange list items in a row */
+        justify-content: space-around; /* Space items evenly */
+        width: 100%; /* Full width */
+        padding: 0; /* Remove padding */
+    }
+    
+    .navigation ul li {
+        height: 55px; /* Adjust height */
+        width: 55px; /* Adjust width */
+    }
+    
+    .navigation ul li a .icon {
+        font-size: 1.2rem; /* Adjust font size */
+        margin-top: 0; /* Reset margin-top */
+        display: flex; /* Add flexbox layout */
+        align-items: center; /* Align items vertically */
+    }
+    
+    .navigation ul li a .icon p {
+        display: inline;
+        margin: 0; /* Remove margin for text */
+        font-size: 0.8rem; /* Adjust text font size */
+        color: rgb(215, 213, 213); /* Default text color */
+        margin-left: 8px; /* Add some space between the icon and text */
+    }
+    
+    .indicator {
+        width: 50px; /* Adjust width */
+        height: 5px; /* Adjust height */
+        bottom: 0; /* Position it at the bottom */
+        left: 10px; /* Adjust left position */
+        top: auto; /* Remove top positioning */
+        border-radius: 0; /* Remove border radius */
+        transform: translateX(0px); /* Reset transform */
+    }
+    
+    .navigation ul li:nth-child(1).active ~ .indicator {
+        transform: translateX(calc(55px * 0 + 15px)); /* Adjust calculation */
+    }
+    
+    .navigation ul li:nth-child(2).active ~ .indicator {
+        transform: translateX(calc(55px * 1 + 15px)); /* Adjust calculation */
+    }
+    
+    .navigation ul li:nth-child(3).active ~ .indicator {
+        transform: translateX(calc(55px * 2 + 15px)); /* Adjust calculation */
+    }
+    
+    .navigation ul li:nth-child(4).active ~ .indicator {
+        transform: translateX(calc(55px * 3 + 15px)); /* Adjust calculation */
+    }
+  
+    .close-icon {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 1.9rem;
+        cursor: pointer;
+    }
+
+    .projects h2 {
+        font-size: 32px;
+        padding-left: 20px;
+    }
+
+    .bento {
+        width: 100%; /* Full width for mobile view */
+        padding-left: 5%; /* Reduced padding for mobile */
+        padding-right: 5%;
+        margin: 0; /* Remove margin for mobile */
+    }
+
+    .bento_container {
+        display: flex;
+        flex-direction: column; /* Stack boxes vertically */
+        gap: 0.5rem; /* Adjust gap for vertical layout */
+        width: 100%; /* Full width for mobile view */
+        padding-left: 5%;
+    }
+
+    .bento_box {
+        position: relative; /* Use relative for easier stacking */
+        width: 100%; /* Full width in mobile */
+        height: auto; /* Auto height to fit content */
+        max-width: 100%; /* Ensure it doesn't overflow */
+        margin-bottom: 1rem; /* Add some margin between boxes */
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    .container, .bento, .bento_container, .bento_box {
+        max-width: 100%; /* Ensure elements do not exceed screen width */
+        box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    }
+
+    .bento_box:nth-child(1),
+    .bento_box:nth-child(2),
+    .bento_box:nth-child(3),
+    .bento_box:nth-child(4) {
+        grid-area: auto; /* Reset grid area for mobile */
+        width: 100%; /* Full width */
+        height: 200px; /* Auto height */
+        margin: 0 auto; /* Center the box */
+        border-radius: 15px; /* Maintain border-radius */
+    }
+
+    .about {
+        padding: 0 5%; /* Adjust padding for mobile view */
+        flex-direction: column; /* Stack items vertically */
+        height: auto; /* Adjust height to fit content */
+        gap: 1rem; /* Reduce gap for mobile view */
+    }
+
+   
+
+    .about-text h2 {
+        font-size: 40px; /* Reduce font size */
+        text-align: left;
+        margin-left: 20px;
+    }
+
+    .about-text h4 {
+        font-size: 24px; /* Reduce font size */
+        text-align: left;
+        margin-left: 20px;
+
+
+    }
+
+    .about-para p {
+        font-size: 16px; /* Adjust font size */
+        line-height: 1.5; /* Adjust line-height for readability */
+        margin-left: 20px;
+    }
+
+    .about-content {
+        flex-direction: column; /* Stack paragraph and image vertically */
+        align-items: center; /* Center align items */
+        gap: 1rem; /* Reduce gap */
+    }
+
+ 
+    .about-img {
+        width: 100%; /* Full width for mobile view */
+        max-width: none; /* Remove max-width restriction */
+        padding: 0; /* Remove padding */
+        margin-left: 120px;
+    }
+
+    .about-img img {
+        width: 70%; /* Adjust width for better presentation */
+        height: auto;
+        border-radius: 8px;
+        justify-content: center;
+
+    }
+    .contact {
+        padding: 0 5%; /* Reduce padding for mobile view */
+        margin-left: 20px;
+        height: auto; /* Adjust height to auto */
+    }
+
+    .contact-container {
+        flex-direction: column; /* Stack the text and form vertically */
+        align-items: center; /* Center align items */
+        gap: 1rem; /* Reduce gap between items */
+    }
+
+    .contact-text,
+    .contact-form {
+        width: 100%; /* Full width for mobile view */
+    }
+
+    .contact-text h2 {
+        font-size: 40px; /* Adjust font size for mobile view */
+        display: block; /* Ensure headings are displayed */
+    }
+
+    .contact-icons {
+        display: none;
+    }
+
+    .contact-text h4 {
+        font-size: 24px; /* Adjust font size for mobile view */
+        display: block; /* Ensure subheadings are displayed */
+    }
+
+    .contact-text p {
+        font-size: 18px; /* Adjust font size for mobile view */
+        display: block; /* Ensure paragraphs are displayed */
+    }
+
+    .contact-form {
+        margin-top: 1rem; /* Adjust margin for mobile view */
+        margin-right: 20px;
+    }
+
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+        width: 90%; /* Full width for input fields */
+        margin-top: 0;
+        margin-left: 10px;
+        margin-right: 20px;
+    }
+
+    .contact-form .send {
+        width: 50%; /* Full width for mobile view */
+        margin: 1rem 20px; /* Adjust margin for spacing */
+        padding: 10px 20px; /* Adjust padding for better touch targets */
+        font-size: 16px; /* Adjust font size for readability */
+    }
+    .home-sci{
+        display: none;
+    }
+    .footer-row {
+        padding-left: 2.5rem;
+        flex-direction: column;
+        align-items: flex-start; /* Aligns children to the start (left) */
+        gap: 1em; /* Space between items */
+    }
+
+    .footer-col {
+        flex: 1 1 100%;
+        text-align: left; /* Aligns text to the left */
+        margin: 0.5em 0; /* Reduced margin for a more compact layout */
+
+    }
+
+    .footer-col img.brand-icon {
+        width: 70px; /* Adjusted size */
+        margin-bottom: 0.5em;
+    }
+
+    .footer-col.social-media a {
+        font-size: 1.2em; /* Adjusted size */
+        margin: 0 0.5em; /* Adjusted spacing */
+    }
+
+    .footer-row.legal {
+        flex-direction: column;
+        padding-top: 1rem;
+        align-items: center; /* Aligns items to the start (left) */
+        gap: 0.5rem; /* Space between items */
+        background-color: #444;
+        width: 100%;
+    }
+
+    .footer-row.legal p,
+    .footer-row.legal .legal-links {
+        font-size: 0.9rem; /* Adjusted font size */
+        margin: 0.5rem 0; /* Margin for spacing */
+        text-align: center; /* Aligns text to the left */
+    }
+
+    .footer-row.legal .legal-links {
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
+        gap: 0.5rem; /* Space between links */
+    }
+}

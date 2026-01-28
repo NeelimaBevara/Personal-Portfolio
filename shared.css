@@ -1,0 +1,128 @@
+body.light {
+    background-color: #ffffff !important;
+    color: #000 !important;
+}
+  
+body.dark {
+    background-color: #000000 !important;
+    color: #fff !important;
+}
+
+
+ body.light .home-content h1,
+    body.light .home-content h3,
+    body.light .home-content p,
+    body.light .btn-group .btn,
+    body.light .bento_box_text span,
+    body.light .about-text h2,
+    body.light .about-text h4,
+    body.light .about-para p,
+    body.light .contact-text h2,
+    body.light .contact-text h4,
+    body.light .contact-text p,
+    body.light .contact-list li,
+    body.light .contact-list i,
+    body.light .contact-icons i {
+        color: #000; /* Set text color to black */
+    }
+    
+    body.light .btn-group .btn {
+        background-color: #fff;
+        border-color: #000;
+        color: #000; /* Ensure buttons also have black text in light mode */
+    }
+    
+    body.light .home-content h3 span,
+    body.light .about-text h2 span,
+    body.light .contact-text h2 span {
+        color: #00abf0; /* Keep the highlight color in light mode */
+    }
+    
+
+body.light .navigation {
+    background-color: rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.4);
+}
+
+body.light .navigation ul li a .icon {
+    color: rgb(67, 66, 66); /* Change icon color to dark mode */
+}
+
+body.light .navigation ul li.light a .icon {
+    color: rgb(255, 255, 255); /* Change light icon color */
+}
+
+body.light .indicator {
+    background: #000;
+    border: 2px solid #fff; /* Adjust indicator border color */
+}
+
+body.light .footer-col h4 {
+    color: #d2d5d3;
+}
+
+body.light .projects h1{
+    color: #000;
+}
+
+body.light .new-section h1{
+    color: #000;
+}
+.switch {
+    position: relative;
+    display: inline-block;
+    top: 10px;
+    margin-left: 95%;
+    width: 60px;
+    height: 34px;
+}
+    
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+    
+/* Default slider styling */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #000; /* Default to black */
+    transition: .4s;
+}
+
+/* Change slider background when checked */
+input:checked + .slider {
+    background-color: #fff; /* White when checked */
+}
+
+/* The circle inside the slider */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff; /* White circle in light mode */
+    transition: .4s;
+}
+
+/* Move circle to the right and change color when checked */
+input:checked + .slider:before {
+    transform: translateX(26px);
+    background-color: #000; /* Black circle in dark mode */
+}
+
+/* Rounded slider styles */
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
